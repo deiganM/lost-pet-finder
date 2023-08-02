@@ -14,7 +14,7 @@ defineProps<{
 		<div class="card w-96 bg-[#F37925] text-primary-content">
 			<div class="card-body">
 				<h2 class="card-title justify-center">Lost Pet Finder</h2>
-				<p class="flex justify-center mb-6">Please log in or register to continue</p>
+				<p class="flex justify-center mb-6">Please log in or register to continue.</p>
 				<div class="card-actions justify-center">
 					<div
 						v-if="canLogin"
@@ -23,8 +23,9 @@ defineProps<{
 							v-if="$page.props.auth.user"
 							:href="route('dashboard')"
 							class="btn"
-							>Dashboard</Link
 						>
+							Dashboard
+						</Link>
 						<template v-else>
 							<Link
 								:href="route('login')"
@@ -42,20 +43,8 @@ defineProps<{
 								</Link>
 						</template>
 					</div>
-					<!-- <button class="btn">Login</button>
-					<button class="btn">Register</button> -->
 				</div>
 			</div>
 		</div>
 	</main>
 </template>
-
-<style>
-	.header-height {
-		height: 25vh;
-	}
-
-	.main-height {
-		height: 70vh;
-	}
-</style>
