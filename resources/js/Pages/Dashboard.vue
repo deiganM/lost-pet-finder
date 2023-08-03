@@ -5,16 +5,32 @@
 
 <script setup lang="ts">
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
+
+const props = defineProps({
+	lostPets: Object,
+})
+console.log(props.lostPets ? props.lostPets[0] : '')
 </script>
 
 <template>
     <Head title="Dashboard" />
 
-    <AuthenticatedLayout>
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>
-        </template>
+		<!-- <Link
+			v-if="$page.props.auth.user"
+			:href="route('home')"
+			class="btn"
+		> -->
 
-    </AuthenticatedLayout>
+	<AuthenticatedLayout>
+		<div class="flex justify-center flex-wrap py-16">
+			<div v-for="item in props.lostPets" class="card w-80 h-80 bg-base-100 shadow-xl m-4">
+				<figure><img src="/images/orange_cat.jpg" alt="Shoes" /></figure>
+				<div class="card-body h-1/2">
+					<h2 class="card-title">{{ item.name }}</h2>
+					<p>If a dog chews shoes whose shoes does he choose?</p>
+				</div>
+			</div>
+		</div>
+	</AuthenticatedLayout>
 </template>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DayController;
+use App\Http\Controllers\HomeController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
@@ -27,8 +28,11 @@ Route::resource('listing', ListingController::class)
     ->only(['index', 'show']);
 
 // Lost pet
+Route::get('/home', [HomeController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('home');
 
-
+// Laravel
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),

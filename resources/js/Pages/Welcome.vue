@@ -21,10 +21,10 @@ defineProps<{
 					>
 						<Link
 							v-if="$page.props.auth.user"
-							:href="route('dashboard')"
+							:href="route('home')"
 							class="btn"
 						>
-							Dashboard
+							Home
 						</Link>
 						<template v-else>
 							<Link
