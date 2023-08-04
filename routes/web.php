@@ -24,6 +24,7 @@ use App\Http\Controllers\ProfileController;
 // Tut
 Route::get('/app', [IndexController::class, 'index']);
 Route::get('/hello', [IndexController::class, 'show']);
+// Add to pet side, home controller maybe?
 Route::resource('listing', ListingController::class)
     ->only(['index', 'show']);
 

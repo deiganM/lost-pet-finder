@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { Link } from '@inertiajs/vue3';
 
-  const props = defineProps({
+  defineProps({
     // 'message' is being sent as a prop from IndexController::index
     message: { type: String, required: false}
   })
@@ -21,5 +21,5 @@ export default {
 <template>
   <div>Index page</div>
   <Link href="/hello">Show Page</Link>
-  <p>{{ props.message }}</p>
+  <p>{{ message }}</p>
 </template>
