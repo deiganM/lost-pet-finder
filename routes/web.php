@@ -1,11 +1,8 @@
 <?php
 
-use App\Http\Controllers\DayController;
-use App\Http\Controllers\HomeController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
-use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\LostPetController;
 use App\Http\Controllers\ProfileController;
@@ -21,17 +18,11 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-// Tut
-Route::get('/app', [IndexController::class, 'index']);
-Route::get('/hello', [IndexController::class, 'show']);
-// Add to pet side, home controller maybe?
-Route::resource('listing', ListingController::class)
-    ->only(['index', 'show']);
-
-// Lost pet
-Route::get('/home', [HomeController::class, 'index'])
+Route::resource('lost-pets', LostPetController::class, [
+        'names' => ['index' => 'home']
+    ])
     ->middleware(['auth', 'verified'])
-    ->name('home');
+    ->only(['index', 'show']);
 
 // Laravel
 Route::get('/', function () {
@@ -43,9 +34,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return Inertia::render('Dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

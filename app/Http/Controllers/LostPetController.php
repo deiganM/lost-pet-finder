@@ -12,7 +12,9 @@ class LostPetController extends Controller
      */
     public function index()
     {
-        //
+        return inertia('LostPets/Dashboard', [
+            'lostPets' => LostPet::all()
+        ]);
     }
 
     /**
@@ -34,15 +36,18 @@ class LostPetController extends Controller
     /**
      * Display the specified resource.
      */
+    // Route Model Binding -> shorter syntax for finding by id
     public function show(LostPet $lostPet)
     {
-        //
+        return inertia( 'LostPets/Show', [
+            'lostPet' => $lostPet // Same as 'listing' => Listing::find($id)
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(LostPet $lostPet)
+    public function edit(string $id)
     {
         //
     }
@@ -50,7 +55,7 @@ class LostPetController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, LostPet $lostPet)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +63,7 @@ class LostPetController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(LostPet $lostPet)
+    public function destroy(string $id)
     {
         //
     }
