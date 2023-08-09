@@ -10,6 +10,7 @@ import { Head, Link } from '@inertiajs/vue3';
 defineProps({
 	lostPets: Object,
 })
+
 </script>
 
 <template>
@@ -27,7 +28,7 @@ defineProps({
 						<p>If a dog chews shoes whose shoes does he choose?</p>
 					</div>
 				</Link>
-				</div>
+			</div>
 		</div>
 	</AuthenticatedLayout>
 </template>
