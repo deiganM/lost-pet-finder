@@ -22,7 +22,7 @@ class LostPetController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('LostPets/Create');
     }
 
     /**
