@@ -1,23 +1,11 @@
 <script setup lang="ts">
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import {reactive} from 'vue'
 // To help submit the form
 import { useForm } from '@inertiajs/vue3';
-
 // Variable holding the form data
 // Like ref(), but reactive is used for objects
 // These items will all remain reactive, unless you redeclare it
-// const form: LostPetForm = reactive({
-//   name: '',
-//   species: '',
-//   sex: '',
-//   physicalDescription: '',
-//   message: '',
-//   lastSeenDate: '',
-//   lastKnownLocation: ''
-// })
-
-const form: LostPetForm = useForm({
+const form: any = useForm({
   name: '',
   species: '',
   sex: '',
@@ -26,6 +14,18 @@ const form: LostPetForm = useForm({
   lastSeenDate: '',
   lastKnownLocation: ''
 })
+
+const create = () => form.post('/lost-pets')
+
+// const form: LostPetForm = useForm({
+//   name: '',
+//   species: '',
+//   sex: '',
+//   physicalDescription: '',
+//   message: '',
+//   lastSeenDate: '',
+//   lastKnownLocation: ''
+// })
 
 
 interface LostPetForm {
@@ -42,7 +42,7 @@ interface LostPetForm {
 <template>
   <AuthenticatedLayout>
 
-    <form>
+    <form @submit.prevent="create">
       <div>
         <div>
           <label>Name of Pet</label>
