@@ -30,7 +30,11 @@ class LostPetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // TODO: Data will need to be validated.
+        // dd($request->all());
+        LostPet::create($request->all());
+
+        return redirect()->route('home');
     }
 
     /**

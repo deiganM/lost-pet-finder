@@ -22,7 +22,7 @@ Route::resource('lost-pets', LostPetController::class, [
         'names' => ['index' => 'home']
     ])
     ->middleware(['auth', 'verified'])
-    ->only(['index', 'show', 'create']);
+    ->only(['index', 'show', 'create', 'store']);
 
 // Laravel
 Route::get('/', function () {

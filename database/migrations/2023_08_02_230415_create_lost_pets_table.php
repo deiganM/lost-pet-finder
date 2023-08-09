@@ -16,10 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('species');
             $table->string('sex');
-            $table->text('physical_description');
             $table->longText('message');
-            $table->string('last_seen_date');
-            $table->text('last_known_location');
             $table->integer('age');
             $table->timestamps();
         });

@@ -26,10 +26,10 @@
             <li class="m-6">Species: {{ props.lostPet.species }}</li>
             <li class="m-6">Sex: {{ props.lostPet.sex }}</li>
             <li class="m-6">age: {{ props.lostPet.age }}</li>
-            <li class="m-6">Description: {{ props.lostPet.physical_description }}</li>
+            <!-- <li class="m-6">Description: {{ props.lostPet.physical_description }}</li> -->
             <li class="m-6">Message: {{ props.lostPet.message }}</li>
-            <li class="m-6">Date Last Seen: {{ props.lostPet.last_seen_date }}</li>
-            <li class="m-6">Last Known Location: {{ props.lostPet.last_known_location }}</li>
+            <!-- <li class="m-6">Date Last Seen: {{ props.lostPet.last_seen_date }}</li> -->
+            <!-- <li class="m-6">Last Known Location: {{ props.lostPet.last_known_location }}</li> -->
           </ul>
         </div>
       </main>

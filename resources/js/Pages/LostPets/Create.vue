@@ -9,10 +9,11 @@ const form: any = useForm({
   name: '',
   species: '',
   sex: '',
-  physicalDescription: '',
+  // physical_description: '',
   message: '',
-  lastSeenDate: '',
-  lastKnownLocation: ''
+  // last_seen_date: '',
+  // last_known_location: '',
+  age: ''
 })
 
 const create = () => form.post('/lost-pets')
@@ -32,10 +33,10 @@ interface LostPetForm {
   name: string,
   species: string,
   sex: string,
-  physicalDescription: string,
+  physical_description: string,
   message: string,
-  lastSeenDate: string,
-  lastKnownLocation: string
+  last_seen_date: string,
+  last_known_location: string
 }
 </script>
 
@@ -49,6 +50,14 @@ interface LostPetForm {
           <input
             type="text" 
             v-model.trim="form.name"
+          />
+        </div>
+
+        <div>
+          <label>Age of Pet</label>
+          <input
+            type="text" 
+            v-model.trim="form.age"
           />
         </div>
   

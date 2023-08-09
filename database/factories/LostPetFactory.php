@@ -20,10 +20,10 @@ class LostPetFactory extends Factory
             'name' => fake()->firstName(),
             'species' => fake()->randomElement(['cat', 'dog', 'bird', 'rabbit', 'guinea pig']),
             'sex' => fake()->randomElement(['male', 'female']),
-            'physical_description' => fake()->sentence(),
+            // 'physical_description' => fake()->sentence(),
             'message' => fake()->paragraph(),
-            'last_seen_date' => fake()->dateTime(),
-            'last_known_location' => fake()->address(),
+            // 'last_seen_date' => fake()->dateTime(),
+            // 'last_known_location' => fake()->address(),
             'age' => fake()->numberBetween(0,30),
         ];
     }

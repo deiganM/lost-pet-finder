@@ -13,10 +13,10 @@ class LostPet extends Model
         'name',
         'species',
         'sex',
-        'physical_description',
+        // 'physical_description',
         'message',
-        'last_seen_date',
-        'last_known_location',
+        // 'last_seen_date',
+        // 'last_known_location',
         'age',
     ];
 }
