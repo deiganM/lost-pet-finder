@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FoundPetController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
@@ -23,6 +24,12 @@ Route::resource('lost-pets', LostPetController::class, [
     ])
     ->middleware(['auth', 'verified'])
     ->only(['index', 'show', 'create', 'store']);
+
+Route::resource('found-pets', FoundPetController::class, [
+        'names' => ['index' => 'found']
+    ])
+    ->middleware(['auth', 'verified'])
+    ->only(['index', 'show']);
 
 // Laravel
 Route::get('/', function () {
