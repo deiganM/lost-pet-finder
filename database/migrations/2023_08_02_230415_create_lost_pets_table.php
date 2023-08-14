@@ -16,8 +16,15 @@ return new class extends Migration
             $table->string('name');
             $table->string('species');
             $table->string('sex');
+            $table->string('lost');
+            $table->string('physical_description');
             $table->longText('message');
+            $table->string('last_seen_date');
+            $table->string('last_known_location');
+            $table->string('cross_street');
             $table->integer('age');
+            $table->interger('microchip_no');
+            $table->interger('tattoo');
             $table->timestamps();
         });
     }

@@ -12,8 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\FoundPet::factory(10)->create();
-        // \App\Models\LostPet::factory(10)->create();
+        // \App\Models\FoundPet::factory(10)->create();
+        \App\Models\LostPet::factory(10)->create();
         // \App\Models\User::factory(10)->create();
 
         // If you need to overwrite specific data

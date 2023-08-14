@@ -22,7 +22,7 @@ class FoundPetController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('FoundPets/Create');
     }
 
     /**
@@ -30,6 +30,9 @@ class FoundPetController extends Controller
      */
     public function store(Request $request)
     {
+        FoundPet::create($request->all());
+
+        return redirect()->route('found');
     }
 
     /**

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  // @ts-ignore 
   import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
   import { Head } from '@inertiajs/vue3';
 

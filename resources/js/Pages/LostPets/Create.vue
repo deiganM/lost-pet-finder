@@ -9,10 +9,10 @@ const form: any = useForm({
   name: '',
   species: '',
   sex: '',
-  // physical_description: '',
+  physical_description: '',
   message: '',
-  // last_seen_date: '',
-  // last_known_location: '',
+  last_seen_date: '',
+  last_known_location: '',
   age: ''
 })
 
@@ -36,7 +36,8 @@ interface LostPetForm {
   physical_description: string,
   message: string,
   last_seen_date: string,
-  last_known_location: string
+  last_known_location: string,
+  age: number
 }
 </script>
 
@@ -83,7 +84,7 @@ interface LostPetForm {
           <label>Physical Description</label>
           <input 
             type="text"
-            v-model.trim="form.physicalDescription"  
+            v-model.trim="form.physical_description"  
           />
         </div>
         
@@ -101,7 +102,7 @@ interface LostPetForm {
           <label>Date Last Seen</label>
           <input 
             type="text"
-            v-model.trim="form.lastSeenDate"  
+            v-model.trim="form.last_seen_date"  
           />
         </div>
   
@@ -110,7 +111,7 @@ interface LostPetForm {
           <label>Last Known Location</label>
           <input
             type="text" 
-            v-model.trim="form.lastKnownLocation"  
+            v-model.trim="form.last_known_location"  
           />
         </div>
   

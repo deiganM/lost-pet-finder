@@ -29,7 +29,7 @@ Route::resource('found-pets', FoundPetController::class, [
         'names' => ['index' => 'found']
     ])
     ->middleware(['auth', 'verified'])
-    ->only(['index', 'show']);
+    ->only(['index', 'show', 'create', 'store']);
 
 // Laravel
 Route::get('/', function () {
